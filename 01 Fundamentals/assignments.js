@@ -54,4 +54,35 @@ console.log(bmiMark, bmiJohn, markHigherBmi);
 // 5th
 let descriptionNew = `${country} is in ${continent}, and its ${population} people speak ${language}`;
 console.log(descriptionNew);
+
+// 6th
+if (population > averagePopulation) {
+    console.log(`${country}'s population is above average`);
+} else {
+    console.log(`${country}'s population is ${averagePopulation - population} below average`);
+}
+
+
+// Challenge #2
+const marksWeight = 78;
+const marksHeight = 1.69;
+const johnsWeight = 92;
+const johnsHeight = 1.95;
+
+// Data 2
+// const marksWeight = 95;
+// const marksHeight = 1.88;
+// const johnsWeight = 85;
+// const johnsHeight = 1.76;
+
+const bmiMark = marksWeight / marksHeight ** 2;
+const bmiJohn = johnsWeight / johnsHeight ** 2;
+const markHigherBmi = bmiMark > bmiJohn;
+
+console.log(bmiMark, bmiJohn, markHigherBmi);
+if (bmiMark > bmiJohn) {
+    console.log(`Mark's BMI (${bmiMark}) is higher than John's (${bmiJohn})`);
+} else {
+    console.log(`John's BMI (${bmiJohn}) is higher than Mark's (${bmiMark})`);
+}
 */

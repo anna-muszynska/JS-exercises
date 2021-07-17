@@ -139,3 +139,24 @@ console.log(`String with
 multiple
 lines`);
 */
+
+/*
+// If / else statements
+const age = 15;
+
+if (age >= 18) {
+    console.log(`Marcel can start driving license 🚗`);
+} else {
+    const yearsLeft = (18 - age);
+    console.log(`Marcel is too young to drive. Wait another ${yearsLeft} years :)`);
+}
+
+const birthYear = 1996;
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+console.log(century);
+*/
