@@ -50,4 +50,8 @@ const bmiJohn = johnsWeight / johnsHeight ** 2;
 const markHigherBmi = bmiMark > bmiJohn;
 
 console.log(bmiMark, bmiJohn, markHigherBmi);
+
+// 5th
+let descriptionNew = `${country} is in ${continent}, and its ${population} people speak ${language}`;
+console.log(descriptionNew);
 */
