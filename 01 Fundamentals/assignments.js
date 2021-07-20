@@ -103,4 +103,54 @@ if (numNeighbours === 1) {
 } else {
     console.log('No borders');
 }
+
+// 8th
+const country = "Poland";
+let population = 38000000;
+language = "polish";
+const isIsland = false;
+
+if (language === 'english' && population < 50000000 && isIsland === false) {
+    console.log(`You should live in ${country}`);
+} else {
+    console.log(`${country} does not meet your criteria :(`);
+}
+
+// Challange #3
+// Data 1
+let [scoreD1, scoreD2, scoreD3] = [96, 108, 89];
+let [scoreK1, scoreK2, scoreK3] = [88, 91, 110];
+
+// Data 2
+// let [scoreD1, scoreD2, scoreD3] = [97, 112, 101];
+// let [scoreK1, scoreK2, scoreK3] = [109, 95, 123];
+
+// Data 3
+// let [scoreD1, scoreD2, scoreD3] = [97, 112, 101];
+// let [scoreK1, scoreK2, scoreK3] = [109, 95, 106];
+
+let scoreAvgDolphins = (scoreD1 + scoreD2 + scoreD3) / 3;
+let scoreAvgKoalas = (scoreK1 + scoreK2 + scoreK3) / 3;
+
+console.log(scoreAvgDolphins);
+console.log(scoreAvgKoalas);
+
+if (scoreAvgDolphins > scoreAvgKoalas) {
+    console.log(`Dolphins won the game!`);
+} else if (scoreAvgDolphins < scoreAvgKoalas) {
+    console.log(`Koalas won the game!`);
+} else {
+    console.log(`It is a draw! Both teams are great!`);
+}
+
+// BONUS TO CHALLANGE - 1) team needs at least 100 points to win 2) both teams need at least 100 points to have a draw
+if (scoreAvgDolphins >= 100 && scoreAvgDolphins > scoreAvgKoalas) {
+    console.log(`Dolphins won the game!`);
+} else if (scoreAvgKoalas >= 100 && scoreAvgDolphins < scoreAvgKoalas) {
+    console.log(`Koalas won the game!`);
+} else if (scoreAvgDolphins >= 100 && scoreAvgKoalas >= 100 && scoreAvgDolphins === scoreAvgKoalas) {
+    console.log(`It is a draw! Both teams are great!`);
+} else {
+    console.log(`Nobody won the game :(`);
+}
 */
