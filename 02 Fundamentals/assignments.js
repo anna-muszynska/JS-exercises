@@ -34,4 +34,14 @@ const percentageGermany2 = percentageOfWorld2(83);
 const percentageNetherlands2 = percentageOfWorld2(17.3);
 
 console.log(percentagePoland2, percentageGermany2, percentageNetherlands2);
+
+
+// 3rd
+const percentageOfWorld3 = population => population * 100 / worldPopulation;
+
+const percentagePoland3 = percentageOfWorld3(38);
+const percentageGermany3 = percentageOfWorld3(83);
+const percentageNetherlands3 = percentageOfWorld3(17.3);
+
+console.log(percentagePoland3, percentageGermany3, percentageNetherlands3);
 */
