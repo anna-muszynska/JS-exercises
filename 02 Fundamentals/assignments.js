@@ -85,4 +85,19 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 
 console.log(avgDolphins, avgKoalas);
 checkWinner(avgDolphins, avgKoalas);
+
+
+// 5th
+const worldPopulation = 7900;
+
+const populations = [38, 83, 17.3, 328];
+
+console.log(populations.length === 4 ? true : false);
+
+function percentageOfWorld1(population) {
+    return population * 100 / worldPopulation;
+}
+
+const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[3])];
+console.log(percentages);
 */
