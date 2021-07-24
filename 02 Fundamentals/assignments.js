@@ -100,4 +100,41 @@ function percentageOfWorld1(population) {
 
 const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[3])];
 console.log(percentages);
-*/
+
+
+// 6th
+const neighbours = ['Germany', 'Czech', 'Slovakia', 'Ukraine', 'Belarus', 'Lithuania', 'Russia'];
+
+neighbours.push('Utopia');
+console.log(neighbours);
+
+neighbours.pop();
+console.log(neighbours);
+
+if (neighbours.includes('Germany')) {
+    console.log(`Probably a central European country :D`)
+}
+
+console.log(neighbours.indexOf('Czech'));
+neighbours[1] = 'The Czech Republic';
+console.log(neighbours);
+
+
+
+// Challenge #2
+const calcTip = function (bill) {
+    if (bill >= 50 && bill <= 300) {
+        return (bill * 0.15)
+    } else {
+        return (bill * 0.2)
+    }
+}
+
+const bills = [125, 555, 44];
+
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+console.log(bills, tips, totals);
+/*
