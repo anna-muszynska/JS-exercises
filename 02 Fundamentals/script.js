@@ -183,3 +183,34 @@ const ania = {
     friends: ['Marcelina', 'Marcel', 'Mięta']
 };
 */
+
+/*
+// Dot vs. bracket notation
+const ania = {
+    firstName: 'Ania',
+    lastName: 'Muszyńska',
+    age: 2021 - 1996,
+    job: 'front-end developer',
+    friends: ['Marcelina', 'Marcel', 'Mięta']
+};
+console.log(ania);
+
+console.log(ania.lastName);
+console.log(ania['lastName']);
+
+const nameKey = 'Name';
+console.log(ania['first' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Ania? Choose between firstName, lastName, age, job and friends');
+
+if (ania[interestedIn]) {
+    console.log(ania[interestedIn]);
+} else {
+    console.log(`Wrong request! Choose between firstName, lastName, age, job and friends`)
+}
+
+ania.location = 'Krakow'; ania['github'] = 'anna-muszynska';
+console.log(ania);
+
+console.log(`${ania.firstName} has ${ania.friends.length} friends and her best friend is called ${ania.friends[0]}`);
+*/

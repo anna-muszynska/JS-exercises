@@ -144,8 +144,13 @@ console.log(bills, tips, totals);
 const myCountry = {
     country: 'Poland',
     capital: 'Warsaw',
-    language: 'Polish',
+    language: 'polish',
     population: 38,
     neighbours: ['Germany', 'The Czech Republic', 'Slovakia', 'Ukraine', 'Belarus', 'Lithuania', 'Russia'],
 }
+
+
+
+// 8th
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`)
 */
