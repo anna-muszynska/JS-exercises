@@ -214,3 +214,40 @@ console.log(ania);
 
 console.log(`${ania.firstName} has ${ania.friends.length} friends and her best friend is called ${ania.friends[0]}`);
 */
+
+/*
+// Object methods
+const ania = {
+    firstName: 'Ania',
+    lastName: 'Muszyńska',
+    birthYear: 1996,
+    job: 'front-end developer',
+    friends: ['Marcelina', 'Marcel', 'Mięta'],
+    hasDriverLicense: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2021 - 1996;
+    // }
+
+    // calcAge: function () {
+    //     // console.log(this);
+    //     return 2021 - this.birthYear;
+    // }
+
+    calcAge: function () {
+        this.age = 2021 - this.birthYear
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and she has ${this.hasDriverLicense ? "a" : "no"} driver's license`
+    }
+};
+
+console.log(ania.calcAge());
+
+console.log(ania.age);
+console.log(ania.age);
+console.log(ania.age);
+console.log(ania.getSummary());
+*/

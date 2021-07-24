@@ -153,4 +153,62 @@ const myCountry = {
 
 // 8th
 console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`)
+
+
+
+// 9th
+const myCountry = {
+    country: 'Poland',
+    capital: 'Warsaw',
+    language: 'polish',
+    population: 38,
+    neighbours: ['Germany', 'The Czech Republic', 'Slovakia', 'Ukraine', 'Belarus', 'Lithuania', 'Russia'],
+
+    describe: function () {
+        return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}`
+    },
+
+    checkIsland: function () {
+        return this.isIsland = this.neighbours.length === 0 ? true : false
+    }
+}
+
+console.log(myCountry.describe());
+console.log(myCountry.checkIsland());
+
+
+
+// Challenge #3
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        return this.bmi = this.mass / this.height ** 2;
+    }
+}
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        return this.bmi = this.mass / this.height ** 2;
+    }
+}
+
+mark.calcBMI();
+john.calcBMI();
+
+console.log(mark.bmi, john.bmi);
+
+if (mark.bmi > john.bmi) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`)
+} else if (mark.bmi < john.bmi) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`)
+} else {
+    console.log('They have even bmi')
+}
 */
