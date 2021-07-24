@@ -172,3 +172,14 @@ if (friends.includes('Marcelina')) {
     console.log(`You have a frind called Marcelina`);
 }
 */
+
+/*
+// Introduction to objects
+const ania = {
+    firstName: 'Ania',
+    lastName: 'Muszyńska',
+    age: 2021 - 1996,
+    job: 'front-end developer',
+    friends: ['Marcelina', 'Marcel', 'Mięta']
+};
+*/
