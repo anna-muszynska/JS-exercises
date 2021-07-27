@@ -320,3 +320,29 @@ for (let i = 0; i <= aniaArray.length; i++) {
     console.log(aniaArray[i], typeof (aniaArray[i]));
 }
 */
+
+
+/*
+// Looping backwards and loops in loops
+
+const aniaArray = [
+    'Ania',
+    'Muszyńska',
+    2021 - 1996,
+    'front-end developer',
+    ['Marcelina', 'Marcel', 'Mięta'],
+    true
+];
+
+for (let i = aniaArray.length - 1; i >= 0; i--) {
+    console.log(i, aniaArray[i])
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`---------Starting exercise ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋`);
+    }
+}
+*/

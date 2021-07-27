@@ -218,10 +218,9 @@ if (mark.bmi > john.bmi) {
 for (voter = 1; voter <= 50; voter++) {
     console.log(`Voter number ${voter} is currently voting`)
 }
-*/
 
 
-/*
+
 // 11th
 const populations = [38, 83, 17.3, 328];
 const percentages2 = [];
@@ -237,4 +236,15 @@ for (let i = 0; i < populations.length; i++) {
 }
 
 console.log(percentages2);
+
+
+
+// 12th
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+for (let i = 0; i < listOfNeighbours.length; i++) {
+    for (let y = 0; y < listOfNeighbours[i].length; y++) {
+        console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+    }
+}
 */
