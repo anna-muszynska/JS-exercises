@@ -211,4 +211,11 @@ if (mark.bmi > john.bmi) {
 } else {
     console.log('They have even bmi')
 }
+
+
+
+// 10th
+for (voter = 1; voter <= 50; voter++) {
+    console.log(`Voter number ${voter} is currently voting`)
+}
 */
