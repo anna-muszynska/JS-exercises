@@ -247,4 +247,61 @@ for (let i = 0; i < listOfNeighbours.length; i++) {
         console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
     }
 }
+
+
+
+
+// 13th
+const populations = [38, 83, 17.3, 328];
+const percentages3 = [];
+
+function percentageOfWorld1(population) {
+    return population * 100 / worldPopulation;
+}
+
+const worldPopulation = 7900;
+
+let i = 0;
+while (i < populations.length) {
+    percentages3.push(percentageOfWorld1(populations[i]));
+    i++
+}
+
+console.log(percentages3);
+
+
+
+
+// Challenge #4
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tips = [];
+const totals = [];
+
+const calcTip = function (bill) {
+    if (bill >= 50 && bill <= 300) {
+        return (bill * 0.15)
+    } else {
+        return (bill * 0.2)
+    }
+}
+
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+    totals.push(calcTip(bills[i]) + bills[i])
+}
+
+console.log(tips, totals);
+
+
+const calcAverage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    };
+    return sum / arr.length
+}
+
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
 */
