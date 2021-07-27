@@ -271,3 +271,52 @@ for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting weights repetition ${rep} 🏋`);
 };
 */
+
+/*
+// Looping arrays, breaking and continuing
+const aniaArray = [
+    'Ania',
+    'Muszyńska',
+    2021 - 1996,
+    'front-end developer',
+    ['Marcelina', 'Marcel', 'Mięta'],
+    true
+];
+
+const types = [];
+
+for (let i = 0; i <= aniaArray.length; i++) {
+    console.log(aniaArray[i], typeof (aniaArray[i]));
+
+
+    // Filling types array
+    // types[i] = typeof (aniaArray[i]);
+    types.push(typeof (aniaArray[i]));
+}
+
+console.log(types);
+
+const years = [1996, 1993, 2015, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+};
+
+console.log(ages);
+
+// continue and break
+console.log('------ONLY STRINGS------')
+for (let i = 0; i <= aniaArray.length; i++) {
+    if (typeof aniaArray[i] !== 'string') continue;
+
+    console.log(aniaArray[i], typeof (aniaArray[i]));
+}
+
+console.log('------BREAK WITH NUMBER------')
+for (let i = 0; i <= aniaArray.length; i++) {
+    if (typeof aniaArray[i] === 'number') break;
+
+    console.log(aniaArray[i], typeof (aniaArray[i]));
+}
+*/

@@ -219,3 +219,22 @@ for (voter = 1; voter <= 50; voter++) {
     console.log(`Voter number ${voter} is currently voting`)
 }
 */
+
+
+/*
+// 11th
+const populations = [38, 83, 17.3, 328];
+const percentages2 = [];
+
+function percentageOfWorld1(population) {
+    return population * 100 / worldPopulation;
+}
+
+const worldPopulation = 7900;
+
+for (let i = 0; i < populations.length; i++) {
+    percentages2.push(percentageOfWorld1(populations[i]));
+}
+
+console.log(percentages2);
+*/
