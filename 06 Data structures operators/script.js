@@ -51,8 +51,19 @@ const restaurant = {
 };
 
 ///////////////////////////////////////////////
-// Short circuiting (|| and &&)
+// The nullish coalescing operator (??)
 
+restaurant.numGuests = 0;
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+// Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+///////////////////////////////////////////////
+// Short circuiting (|| and &&)
+/*
 // Logical operators can: 1) use ANY data type, 2) return ANY data type, 3) short-circuiting
 
 console.log('----------OR----------');
@@ -82,6 +93,7 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+*/
 
 ///////////////////////////////////////////////
 // Rest pattern and parameters
