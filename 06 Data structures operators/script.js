@@ -55,8 +55,46 @@ const restaurant = {
 };
 
 ///////////////////////////////////////////////
-// Looping objects: objects keys, values and entries
+// Sets
 
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Ania'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set(staff).size);
+console.log(new Set('annamuszynska').size);
+
+///////////////////////////////////////////////
+// Looping objects: objects keys, values and entries
+/*
 // Property NAMES
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -80,6 +118,7 @@ const entries = Object.entries(openingHours);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+*/
 
 ///////////////////////////////////////////////
 // Optional chaining (?.)
@@ -215,6 +254,37 @@ printGoals(...game.scored);
 // 7
 team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
+*/
+
+/*
+// Coding Challenge #2
+// 1
+for (const [i, player] of game.scored.entries())
+  console.log(`Goal ${i + 1}: ${player}`);
+
+// 2
+const values = Object.values(game.odds);
+let average = 0;
+
+for (const odd of values) average += odd;
+average /= values.length;
+console.log(average);
+
+// 3
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+
+// 4
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player]
+    ? (scorers[player] = scorers[player] + 1)
+    : (scorers[player] = 1);
+}
+
+console.log(scorers);
 */
 
 ///////////////////////////////////////////////
