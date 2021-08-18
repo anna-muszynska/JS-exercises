@@ -55,8 +55,88 @@ const restaurant = {
 };
 
 ///////////////////////////////////////////////
-// Working with strings - part 2
+// Challenge #4
+/*
+const input = document.createElement('textarea');
+input.cols = '80';
+input.rows = '40';
+const button = document.createElement('button');
+document.body.appendChild(input);
+document.body.appendChild(button);
 
+const functionInput = function () {
+  const text = input.value;
+  const rows = text.split('\n');
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20, ' ')}${'✅'.repeat(i + 1)}`);
+  }
+};
+
+button.addEventListener('click', functionInput);
+*/
+
+///////////////////////////////////////////////
+// Working with strings - part 3
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Anna Muszyńska'.split(' '));
+
+const [firstName, lastName] = 'Anna Muszyńska'.split(' ');
+
+const newName = ['Ms.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('anna muszyńska');
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Ania'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(42834729834741989423));
+console.log(maskCreditCard(8208304802840));
+
+// Repeat
+const message2 = 'Bad weather... All Depatrures Delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+
+///////////////////////////////////////////////
+// Working with strings - part 2
+/*
 const airline = 'TAP Air Portugal';
 
 console.log(airline.toLowerCase());
@@ -115,6 +195,7 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some Food and a pocket knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
+*/
 
 ///////////////////////////////////////////////
 // Working with strings - part 1
