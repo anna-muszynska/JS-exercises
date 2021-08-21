@@ -70,7 +70,7 @@ checkIn(flight, ania);
 
 ///////////////////////////////////////
 // Functions accepting callback functions
-
+/*
 const oneWord = function (str) {
   return string.replaceAll(' ', '').toLowerCase();
 };
@@ -96,3 +96,26 @@ const high5 = function () {
 };
 
 document.body.addEventListener('click', high5);
+*/
+
+///////////////////////////////////////
+// Functions returning functions
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Ania');
+greeterHey('Marcelina');
+
+greet('Hello')('Ania');
+
+// Challenge
+const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+
+const greetYou = greet2('Bonjour');
+greetYou('Marcel');
+greet2('Hi')('Marcelina');
