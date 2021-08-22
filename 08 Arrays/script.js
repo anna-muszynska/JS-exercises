@@ -38,6 +38,7 @@ console.log(letters.join('-'));
 
 ///////////////////////////////////////
 // Looping arrays: forEach
+/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // for (const movement of movements) {
@@ -61,3 +62,24 @@ movements.forEach(function (mov, i, arr) {
 // 1: function (450)
 // 2: function (400)
 // ...
+*/
+
+///////////////////////////////////////
+// forEach with maps and sets
+
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+// Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${value}: ${value}`);
+});
