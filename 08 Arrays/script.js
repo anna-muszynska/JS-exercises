@@ -104,8 +104,36 @@ const checkDogs = function (arrJulia, arrKate) {
 };
 
 // checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
-checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+// checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 */
+
+///////////////////////////////////////
+// Coding challenge #2
+
+const calcAverageHumanAge = function (arrDogsAges) {
+  const humanAge = arrDogsAges.map(function (dogAge) {
+    if (dogAge <= 2) {
+      return 2 * dogAge;
+    } else {
+      return 16 + 4 * dogAge;
+    }
+  });
+  console.log(humanAge);
+
+  const adultDogs = humanAge.filter(age => age >= 18);
+  console.log(adultDogs);
+
+  const adultDogsAvg = Math.round(
+    adultDogs.reduce((acc, age) => acc + age, 0) / adultDogs.length
+  );
+
+  return adultDogsAvg;
+};
+
+const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+
+console.log(avg1, avg2);
 
 ///////////////////////////////////////
 // The map method
@@ -139,7 +167,7 @@ console.log(movementsDescriptions);
 
 ///////////////////////////////////////
 // The filter method
-
+/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const deposits = movements.filter(function (mov) {
@@ -154,3 +182,30 @@ console.log(depositsFor);
 
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
+*/
+
+///////////////////////////////////////
+// The reduce method
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// accumulator -> SNOWBALL
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   return acc + cur;
+// }, 0);
+// console.log(balance);
+
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+
+// Maximum value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max);
