@@ -66,7 +66,7 @@ movements.forEach(function (mov, i, arr) {
 
 ///////////////////////////////////////
 // forEach with maps and sets
-
+/*
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -83,3 +83,55 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value}: ${value}`);
 });
+*/
+
+///////////////////////////////////////
+// Coding challenge #1
+/*
+const checkDogs = function (arrJulia, arrKate) {
+  const arrJuliaCorrect = [...arrJulia].slice(1, -2);
+
+  const bothArr = [...arrJuliaCorrect, ...arrKate];
+  for (const [numb, age] of bothArr.entries()) {
+    if (age >= 3) {
+      console.log(
+        `Dog number ${numb + 1} is an adult, and is ${age} years old`
+      );
+    } else {
+      console.log(`Dog number ${numb + 1} is still a puppy`);
+    }
+  }
+};
+
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+*/
+
+///////////////////////////////////////
+// The map method
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map(
+  (mov, i, arr) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementsDescriptions);
