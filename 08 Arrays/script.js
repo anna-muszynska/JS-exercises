@@ -109,7 +109,7 @@ const checkDogs = function (arrJulia, arrKate) {
 
 ///////////////////////////////////////
 // Coding challenge #2
-
+/*
 const calcAverageHumanAge = function (arrDogsAges) {
   const humanAge = arrDogsAges.map(function (dogAge) {
     if (dogAge <= 2) {
@@ -134,6 +134,7 @@ const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
 console.log(avg1, avg2);
+*/
 
 ///////////////////////////////////////
 // The map method
@@ -186,7 +187,7 @@ console.log(withdrawals);
 
 ///////////////////////////////////////
 // The reduce method
-
+/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // accumulator -> SNOWBALL
@@ -209,3 +210,37 @@ const max = movements.reduce((acc, mov) => {
   else return mov;
 }, movements[0]);
 console.log(max);
+*/
+
+///////////////////////////////////////
+// Chaining methods
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
+
+const totalDepositUSD = movements
+  .filter(mov => mov > 0)
+  .map((mov, i, arr) => {
+    // console.log(arr);
+    return mov * eurToUsd;
+  })
+  // .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositUSD);
+
+///////////////////////////////////////
+// Coding challenge #3
+/*
+const arr1 = [5, 2, 4, 1, 15, 8, 3];
+const arr2 = [16, 6, 10, 5, 6, 1, 4];
+
+const calcAverageHumanAge2 = arr =>
+  arr
+    .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + 4 * dogAge))
+    .filter(age => age >= 18)
+    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+
+const data1 = calcAverageHumanAge2(arr1);
+const data2 = calcAverageHumanAge2(arr2);
+console.log(data1, data2);
+*/
