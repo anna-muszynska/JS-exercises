@@ -347,7 +347,7 @@ console.log(overalBalance);
 
 ///////////////////////////////////////
 // Sorting arrays
-
+/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // Strings
@@ -376,3 +376,43 @@ console.log(movements);
 // });
 movements.sort((a, b) => b - a);
 console.log(movements);
+*/
+
+///////////////////////////////////////
+// More ways of creating and filling arrays
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+// Empty array + fill method
+const x = new Array(7);
+console.log(x);
+
+// x.fill(1);
+x.fill(1, 3, 5);
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr);
+
+// Arrray.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+const r = Array.from(
+  { length: 100 },
+  cur => (cur = Math.trunc(Math.random() * 100) + 1)
+);
+console.log(r);
+
+const movementsUI = Array.from(
+  document.querySelectorAll('.movements__value'),
+  el => Number(el.textContent.replace('€', '').replace(' ', ''))
+);
+console.log(movementsUI);
+
+const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+console.log(movementsUI2);
