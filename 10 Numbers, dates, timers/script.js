@@ -82,7 +82,7 @@ console.log(+(2.345).toFixed(2));
 
 ///////////////////////////////////////
 // The remainder operator
-
+/*
 console.log(5 % 2);
 console.log(5 / 2); // 5 = 2 * 2 + 1
 
@@ -102,3 +102,38 @@ console.log(isEven(514));
 
 console.log(9 % 3);
 console.log(9 % 4);
+*/
+
+///////////////////////////////////////
+// The BigInt
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(42349874927492757520453276743n);
+console.log(BigInt(4234987492));
+
+// Operations
+console.log(10000n + 10000n);
+console.log(9345626492634072730493247250864359n * 1000000000000n);
+// console.log(Math.sqrt(16n)); // error
+
+const huge = 739475937203481943794623687n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 15); // true
+console.log(20n === 20); // false
+console.log(typeof 20n);
+console.log(20n == 20); // true
+
+console.log(huge + " is REALLY big!!!");
+
+// Divisions
+console.log(11n / 3n); // cut decimal part
+console.log(10 / 3);
