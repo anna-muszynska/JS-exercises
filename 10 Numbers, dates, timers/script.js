@@ -106,7 +106,7 @@ console.log(9 % 4);
 
 ///////////////////////////////////////
 // The BigInt
-
+/*
 console.log(2 ** 53 - 1);
 console.log(Number.MAX_SAFE_INTEGER);
 console.log(2 ** 53 + 1);
@@ -137,3 +137,48 @@ console.log(huge + " is REALLY big!!!");
 // Divisions
 console.log(11n / 3n); // cut decimal part
 console.log(10 / 3);
+*/
+
+///////////////////////////////////////
+// Creating dates
+
+// Create a date
+const now = new Date();
+console.log(now);
+
+console.log(new Date("Aug 29 2021 23:07:32"));
+console.log(new Date("December 24, 2015"));
+
+const account1 = {
+  movementsDates: ["2019-11-18T21:31:17.178Z", "2019-12-23T07:42:02.383Z"],
+};
+
+console.log(new Date(account1.movementsDates[0]));
+
+// Months are 0-based
+// 31.11 --> 01.12 as November has 30 days
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31, 15, 23, 5));
+
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000)); // 3 days later form 0
+
+// Working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate()); // day of the month
+console.log(future.getDay()); // day of the week --> 0 based
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+console.log(new Date(2142253380000));
+
+console.log(Date.now());
+
+future.setFullYear(2040);
+console.log(future);
