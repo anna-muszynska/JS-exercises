@@ -186,7 +186,7 @@ console.log(future);
 
 ///////////////////////////////////////
 // Operations with dates
-
+/*
 const future = new Date(2037, 10, 19, 15, 23);
 console.log(+future);
 
@@ -195,3 +195,33 @@ const calcDaysPassed = (date1, date2) =>
 
 const days1 = calcDaysPassed(new Date(2037, 4, 18), new Date(2037, 4, 15));
 console.log(days1);
+*/
+
+///////////////////////////////////////
+// Timers: setTimeout and setInterval
+
+// setTimeout
+const ingredients = ["olives", "spinach"];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  ...ingredients
+);
+console.log("Waiting...");
+
+if (ingredients.includes("spinach")) clearTimeout(pizzaTimer);
+
+// setInterval
+const timer = setInterval(function () {
+  const now = new Date();
+  console.log(now);
+}, 1000);
+clearInterval(timer);
+
+const timer2 = setInterval(function () {
+  const sec = new Date().getSeconds();
+  const min = new Date().getMinutes();
+  const hrs = new Date().getHours();
+  console.log(`${hrs}:${min}:${sec}`);
+}, 1000);
+clearInterval(timer2);
