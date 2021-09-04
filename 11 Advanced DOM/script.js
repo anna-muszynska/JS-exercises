@@ -151,6 +151,7 @@ document.querySelector('.nav').addEventListener(
 
 ///////////////////////////////////////
 // DOM traversing
+/*
 const h1 = document.querySelector('h1');
 
 // Going downwards: child
@@ -179,3 +180,21 @@ console.log(h1.parentElement.children);
 [...h1.parentElement.children].forEach(function (el) {
   if (el !== h1) el.style.transform = 'scale(0.5';
 });
+*/
+
+///////////////////////////////////////
+// The intersection observer API
+
+const obsCallback = function (entries, observer) {
+  entries.forEach(entry => {
+    console.log(entry);
+  });
+};
+
+const obsOptions = {
+  root: null,
+  threshold: [0, 0.2],
+};
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(section1);
