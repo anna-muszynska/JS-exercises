@@ -27,3 +27,25 @@ const marcel = new Person('Marcel', 2015);
 console.log(marcelina, marcel);
 
 console.log(ania instanceof Person);
+
+///////////////////////////////////////
+// Prototypes
+console.log(Person.prototype);
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+ania.calcAge();
+console.log(ania.__proto__);
+console.log(ania.__proto__ === Person.prototype);
+
+console.log(Person.prototype.isPrototypeOf(ania));
+
+// .prototypeOfLinkedObjects
+
+Person.prototype.species = 'Homo Sapiens';
+console.log(ania.species, marcelina.species);
+
+console.log(ania.hasOwnProperty('firstName'));
+console.log(ania.hasOwnProperty('species'));
