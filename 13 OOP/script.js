@@ -49,3 +49,24 @@ console.log(ania.species, marcelina.species);
 
 console.log(ania.hasOwnProperty('firstName'));
 console.log(ania.hasOwnProperty('species'));
+
+///////////////////////////////////////
+// Prototypal inheritance on built-in objects
+
+console.log(ania.__proto__);
+// Object.prototype (top of prototype chain)
+console.log(ania.__proto__.__proto__);
+console.log(ania.__proto__.__proto__.__proto__);
+
+console.dir(Person.prototype.constructor);
+
+const arr = [3, 4, 5, 6, 6, 9, 9, 11]; // new Array === []
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+console.log(arr.__proto__.__proto__);
+
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.unique());
