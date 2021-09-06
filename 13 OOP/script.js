@@ -110,6 +110,7 @@ class PersonCl {
     this.birthYear = birthYear;
   }
 
+  // Instance method
   // Methods will be added to .prototype property
   calcAge() {
     console.log(2037 - this.birthYear);
@@ -133,6 +134,12 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  // Static method
+  static hey() {
+    console.log('Hey there!');
+    console.log(this);
+  }
 }
 
 const alicja = new PersonCl('Alicja Mak', 1960);
@@ -152,6 +159,7 @@ alicja.greet();
 // 3. Classes are executed in strict mode
 
 const walter = new PersonCl('Walter White', 1995);
+PersonCl.hey();
 
 ///////////////////////////////////////
 // Setters and getters
@@ -172,3 +180,13 @@ const account = {
 console.log(account.latest);
 account.latest = 50;
 console.log(account.movements);
+
+///////////////////////////////////////
+// Static methods
+
+Person.hey = function () {
+  console.log('Hey there!');
+  console.log(this);
+};
+
+Person.hey();
