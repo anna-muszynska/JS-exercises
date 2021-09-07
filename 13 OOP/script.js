@@ -2,7 +2,7 @@
 
 ///////////////////////////////////////
 // Constructor functions and the new operator
-
+/*
 const Person = function (firstName, birthYear) {
   // Istance properties
   this.firstName = firstName;
@@ -216,3 +216,77 @@ console.log(steven.__proto__ === PersonProto);
 const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 1997);
 sarah.calcAge();
+*/
+
+///////////////////////////////////////
+// Challenge #2
+
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(this.speed);
+  }
+
+  brake() {
+    this.speed -= 5;
+    console.log(this.speed);
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+
+const ford = new CarCl('Ford', 120);
+console.log(ford);
+
+ford.accelerate();
+ford.brake();
+console.log(ford.speedUS);
+ford.speedUS = 50;
+console.log(ford);
+
+///////////////////////////////////////
+// Inheritance between "classes": constructor functions
+
+const Person = function (firstName, birthYear) {
+  // Istance properties
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+// Linking prototypes
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+console.log(mike);
+mike.introduce();
+mike.calcAge();
+
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
