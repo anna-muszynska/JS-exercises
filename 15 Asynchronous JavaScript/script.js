@@ -411,8 +411,8 @@ Promise.reject(new Error('Problem!')).catch(x => console.error(x));
 */
 
 ///////////////////////////////////////
-// Promisifying the Geolocation API
-
+// Promisifying the geolocation API
+/*
 const getPosition = function () {
   return new Promise(function (resolve, reject) {
     // navigator.geolocation.getCurrentPosition(
@@ -478,3 +478,82 @@ const whereAmI = function () {
 };
 
 btn.addEventListener('click', whereAmI);
+*/
+
+///////////////////////////////////////
+// Challenge #2
+/*
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const image = document.createElement('img');
+    image.src = imgPath;
+
+    image.addEventListener('load', function () {
+      document.querySelector('.images').append(image);
+      resolve(image);
+    });
+
+    image.addEventListener('error', function () {
+      reject(new Error('Image not found'));
+    });
+  });
+};
+
+let currentImg;
+
+createImage('./img/img-1.jpg')
+  .then(img => {
+    currentImg = img;
+    console.log('Image 1 loaded');
+    return wait(2);
+  })
+  .then(() => {
+    currentImg.style.display = 'none';
+    return createImage('./img/img-2.jpg');
+  })
+  .then(img => {
+    currentImg = img;
+    console.log('Image 2 loaded');
+    return wait(2);
+  })
+  .then(() => {
+    currentImg.style.display = 'none';
+  })
+  .catch(err => console.log(err));
+*/
+
+///////////////////////////////////////
+// Consuming promises with async/await
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const whereAmI = async function () {
+  const pos = await getPosition();
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+  const dataGeo = await resGeo.json();
+  console.log(dataGeo);
+
+  // fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true$`).then(
+  //   res => console.log(res)
+  // );
+
+  const res = await fetch(
+    `https://restcountries.eu/rest/v2/name/${dataGeo.country}?fullText=true$`
+  );
+  const data = await res.json();
+  console.log(data);
+};
+whereAmI('portugal');
+console.log('FIRST');
