@@ -10,7 +10,7 @@ const getCountryData = function (country) {
   const request = new XMLHttpRequest();
   request.open(
     'GET',
-    `https://restcountries.eu/rest/v2/name/${country}?fullText=true`
+    `https://restcountries.com/v2/name/${country}?fullText=true`
   );
   request.send();
 
@@ -77,7 +77,7 @@ const getCountryAndNeighbour = function (country) {
   const request = new XMLHttpRequest();
   request.open(
     'GET',
-    `https://restcountries.eu/rest/v2/name/${country}?fullText=true`
+    `https://restcountries.com/v2/name/${country}?fullText=true`
   );
   request.send();
 
@@ -95,7 +95,7 @@ const getCountryAndNeighbour = function (country) {
 
     // AJAX call country 2
     const request2 = new XMLHttpRequest();
-    request2.open('GET', `https://restcountries.eu/rest/v2/alpha/${neighbour}`);
+    request2.open('GET', `https://restcountries.com/v2/alpha/${neighbour}`);
     request2.send();
 
     request2.addEventListener('load', function () {
@@ -128,7 +128,7 @@ setTimeout(() => {
 // Promises and the fetch API - consuming promises
 /*
 // const request = new XMLHttpRequest();
-// request.open('GET',`https://restcountries.eu/rest/v2/name/${country}?fullText=true`);
+// request.open('GET',`https://restcountries.com/v2/name/${country}?fullText=true`);
 // request.send();
 
 const renderCountry = function (data, className = '') {
@@ -155,12 +155,12 @@ const renderCountry = function (data, className = '') {
 };
 
 const request = fetch(
-  `https://restcountries.eu/rest/v2/name/netherlands?fullText=true`
+  `https://restcountries.com/v2/name/netherlands?fullText=true`
 );
 console.log(request);
 
 // const getCountryData = function (country) {
-//   fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
+//   fetch(`https://restcountries.com/v2/name/${country}?fullText=true`)
 //     .then(function (response) {
 //       console.log(response);
 //       return response.json();
@@ -219,7 +219,7 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
 
 // const getCountryData = function (country) {
 //   // Country 1
-//   fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
+//   fetch(`https://restcountries.com/v2/name/${country}?fullText=true`)
 //     .then(response => {
 //       console.log(response);
 
@@ -235,7 +235,7 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
 //       if (!neighbour) return;
 
 //       // Country 2
-//       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
+//       return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
 //     })
 //     .then(response => {
 //       if (!response.ok) throw new Error(`Country not found ${response.status}`);
@@ -261,7 +261,7 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
 const getCountryData = function (country) {
   // Country 1
   getJSON(
-    `https://restcountries.eu/rest/v2/name/${country}?fullText=true`,
+    `https://restcountries.com/v2/name/${country}?fullText=true`,
     'Country not found'
   )
     .then(data => {
@@ -272,7 +272,7 @@ const getCountryData = function (country) {
 
       // Country 2
       return getJSON(
-        `https://restcountries.eu/rest/v2/alpha/${neighbour}`,
+        `https://restcountries.com/v2/alpha/${neighbour}`,
         'Country not found'
       );
     })
@@ -333,7 +333,7 @@ const whereAmI = function (lat, lng) {
     .then(data => {
       console.log(data, `You are in ${data.city}, ${data.country}`);
       return fetch(
-        `https://restcountries.eu/rest/v2/name/${data.country}?fullText=true`
+        `https://restcountries.com/v2/name/${data.country}?fullText=true`
       );
     })
     .then(response => {
@@ -465,7 +465,7 @@ const whereAmI = function () {
       console.log(data, `You are in ${data.city}, ${data.country}`);
 
       return fetch(
-        `https://restcountries.eu/rest/v2/name/${data.country}?fullText=true`
+        `https://restcountries.com/v2/name/${data.country}?fullText=true`
       );
     })
     .then(response => {
@@ -538,22 +538,41 @@ const getPosition = function () {
 };
 
 const whereAmI = async function () {
-  const pos = await getPosition();
-  const { latitude: lat, longitude: lng } = pos.coords;
+  try {
+    const pos = await getPosition();
+    const { latitude: lat, longitude: lng } = pos.coords;
 
-  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
-  const dataGeo = await resGeo.json();
-  console.log(dataGeo);
+    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    if (!resGeo.ok) throw new Error('Problem getting location data');
 
-  // fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true$`).then(
-  //   res => console.log(res)
-  // );
+    const dataGeo = await resGeo.json();
+    console.log(dataGeo);
 
-  const res = await fetch(
-    `https://restcountries.eu/rest/v2/name/${dataGeo.country}?fullText=true$`
-  );
-  const data = await res.json();
-  console.log(data);
+    // fetch(`https://restcountries.com/v2/name/${country}?fullText=true$`).then(
+    //   res => console.log(res)
+    // );
+
+    const res = await fetch(
+      `https://restcountries.com/v2/name/${dataGeo.country}?fullText=true$`
+    );
+    if (!res.ok) throw new Error('Problem getting country');
+
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
 };
 whereAmI('portugal');
 console.log('FIRST');
+
+///////////////////////////////////////
+// Error handling with try...catch
+
+// try {
+//   let y = 1;
+//   const x = 2;
+//   x = 3;
+// } catch (err) {
+//   alert(err);
+// }
